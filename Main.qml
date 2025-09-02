@@ -55,25 +55,34 @@ ApplicationWindow {
         }
 
         // 数值显示区域
-        Column {
-            spacing: 15
+        Item {
+            width: 300
+            height: 120  // 固定高度，足够容纳3个数值的显示空间
 
-            Text {
-                text: "数值 1: " + value1.toFixed(2)
-                font.pixelSize: 24
-                visible: displayCount >= 1
-            }
+            Column {
+                anchors.centerIn: parent
+                spacing: 15
 
-            Text {
-                text: "数值 2: " + value2.toFixed(2)
-                font.pixelSize: 24
-                visible: displayCount >= 2
-            }
+                Text {
+                    text: "数值 1: " + value1.toFixed(2)
+                    font.pixelSize: 24
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    visible: displayCount >= 1
+                }
 
-            Text {
-                text: "数值 3: " + value3.toFixed(2)
-                font.pixelSize: 24
-                visible: displayCount >= 3
+                Text {
+                    text: "数值 2: " + value2.toFixed(2)
+                    font.pixelSize: 24
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    visible: displayCount >= 2
+                }
+
+                Text {
+                    text: "数值 3: " + value3.toFixed(2)
+                    font.pixelSize: 24
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    visible: displayCount >= 3
+                }
             }
         }
 
